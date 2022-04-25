@@ -18,5 +18,3 @@ coalCloud coalParcels
 /*    slgThermo*/
 /*);*/
 
-#include "testSomething.h"
-#include "testFundamental.h"
