@@ -1,0 +1,420 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      thermophysicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+thermoType
+{
+    type            hePsiThermo;
+    mixture         reactingMixture;
+    transport       sutherland;
+    thermo          janaf;
+    energy          sensibleEnthalpy;
+    equationOfState perfectGas;
+    specie          specie;
+}
+
+chemistryReader foamChemistryReader;
+
+foamChemistryThermoFile "$FOAM_CASE/constant/thermo2020";
+
+foamChemistryFile "$FOAM_CASE/constant/chem2020";
+
+// foamChemistryThermoFile "$FOAM_CASE/constant/thermo"; // no reaction for 2008 Ranzi pyrolysis
+
+// foamChemistryFile "$FOAM_CASE/constant/foam.inp"; // no reaction for 2008 Ranzi pyrolysis
+
+inertSpecie     N2;
+
+liquids
+{
+    H2O
+    {
+        defaultCoeffs   yes;
+    }
+}
+
+solids
+{
+    CELL
+    {
+        defaultCoeffs   no;
+        CELLCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    CELLA
+    {
+        defaultCoeffs   no;
+        CELLACoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    HCE
+    {
+        defaultCoeffs   no;
+        HCECoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    HCE1
+    {
+        defaultCoeffs   no;
+        HCE1Coeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    HCE2
+    {
+        defaultCoeffs   no;
+        HCE2Coeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    LIG-C
+    {
+        defaultCoeffs   no;
+        LIG-CCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    LIG-H
+    {
+        defaultCoeffs   no;
+        LIG-HCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    LIG-O
+    {
+        defaultCoeffs   no;
+        LIG-OCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    LIG-CC
+    {
+        defaultCoeffs   no;
+        LIG-CCCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    LIG-OH
+    {
+        defaultCoeffs   no;
+        LIG-OHCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    LIG
+    {
+        defaultCoeffs   no;
+        LIGCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    TGL
+    {
+        defaultCoeffs   no;
+        TGLCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    TANN
+    {
+        defaultCoeffs   no;
+        TANNCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    ITANN
+    {
+        defaultCoeffs   no;
+        ITANNCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    GCO2
+    {
+        defaultCoeffs   no;
+        GCO2Coeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    GCO
+    {
+        defaultCoeffs   no;
+        GCOCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    GCOH2L
+    {
+        defaultCoeffs   no;
+        GCOH2LCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    GCOH2S
+    {
+        defaultCoeffs   no;
+        GCOH2SCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    GCOH2
+    {
+        defaultCoeffs   no;
+        GCOH2Coeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    GH2
+    {
+        defaultCoeffs   no;
+        GH2Coeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    GCH4
+    {
+        defaultCoeffs   no;
+        GCH4Coeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    GCH3OH
+    {
+        defaultCoeffs   no;
+        GCH3OHCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    GC2H4
+    {
+        defaultCoeffs   no;
+        GC2H4Coeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    GC2H6
+    {
+        defaultCoeffs   no;
+        GC2H6Coeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    GC6H5OH
+    {
+        defaultCoeffs   no;
+        GC6H5OHCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    GMSW
+    {
+        defaultCoeffs   no;
+        GMSWCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    XYHW
+    {
+        defaultCoeffs   no;
+        XYHWCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    XYGR
+    {
+        defaultCoeffs   no;
+        XYGRCoeffs
+        {
+            rho             1450; //Morten p24
+            Cp              1500; // di blasi and russo 1994
+            K               0.279; // Ranznjevic 1976 p128 morten
+            Hf              0;
+            emissivity      0.8;
+        }
+    }
+    C
+    {
+        defaultCoeffs   no;
+        CCoeffs
+        {
+            rho             1570; // Morten p24
+            Cp              1100; // Di blasi and Russo 1994
+            K               0.0878; // Lee et al. 1976 p128 morten
+            Hf              0;
+            emissivity      1.0;
+        }
+    }
+    ash
+    {
+      defaultCoeffs   yes;
+    }
+}
+
+//solids
+//{
+//    solidComponents ( C ash );
+//    C
+//    {
+//        defaultCoeffs   yes;
+//    }
+//    ash
+//    {
+//        defaultCoeffs   yes;
+//    }
+
+//}
+
+
+// ************************************************************************* //

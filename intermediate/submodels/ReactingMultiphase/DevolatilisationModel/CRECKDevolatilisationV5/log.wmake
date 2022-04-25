@@ -1,0 +1,84 @@
+wmake: 'Make' directory does not exist in /media/boyao/sanDisk500/solvers/tgaSolver/intermediate/submodels/ReactingMultiphase/DevolatilisationModel/CRECKDevolatilisationV5
+    Searching up directories tree for Make directory
+    ln: ./lnInclude
+Making dependency list for source file makeAveragingMethods.C
+Making dependency list for source file cloudSolution.C
+Making dependency list for source file phasePropertiesList.C
+Making dependency list for source file phasePropertiesIO.C
+Making dependency list for source file phaseProperties.C
+Making dependency list for source file analytical.C
+Making dependency list for source file Euler.C
+Making dependency list for source file integrationSchemeNew.C
+Making dependency list for source file integrationScheme.C
+Making dependency list for source file isotropic.C
+Making dependency list for source file nonEquilibrium.C
+Making dependency list for source file equilibrium.C
+Making dependency list for source file TimeScaleModel.C
+Making dependency list for source file relative.C
+Making dependency list for source file absolute.C
+Making dependency list for source file noCorrectionLimiting.C
+Making dependency list for source file CorrectionLimitingMethod.C
+Making dependency list for source file exponential.C
+Making dependency list for source file Lun.C
+Making dependency list for source file HarrisCrighton.C
+Making dependency list for source file ParticleStressModel.C
+Making dependency list for source file reactingMultiphaseParcelInjectionDataIOList.C
+Making dependency list for source file reactingMultiphaseParcelInjectionDataIO.C
+Making dependency list for source file reactingMultiphaseParcelInjectionData.C
+Making dependency list for source file reactingParcelInjectionDataIOList.C
+Making dependency list for source file reactingParcelInjectionDataIO.C
+Making dependency list for source file reactingParcelInjectionData.C
+Making dependency list for source file thermoParcelInjectionDataIOList.C
+Making dependency list for source file thermoParcelInjectionDataIO.C
+Making dependency list for source file thermoParcelInjectionData.C
+Making dependency list for source file patchInjectionBase.C
+Making dependency list for source file kinematicParcelInjectionDataIOList.C
+Making dependency list for source file kinematicParcelInjectionDataIO.C
+Making dependency list for source file kinematicParcelInjectionData.C
+Making dependency list for source file patchInteractionDataList.C
+Making dependency list for source file patchInteractionData.C
+Making dependency list for source file cloudScatter.C
+wmkdepend: could not open 'scatterModel.H' for source file 'submodels/addOns/radiation/scatter/cloudScatter/cloudScatter.C': No such file or directory
+Making dependency list for source file cloudAbsorptionEmission.C
+wmkdepend: could not open 'absorptionEmissionModel.H' for source file 'submodels/addOns/radiation/absorptionEmission/cloudAbsorptionEmission/cloudAbsorptionEmission.C': No such file or directory
+Making dependency list for source file makeBasicKinematicMPPICParcelSubmodels.C
+wmkdepend: could not open 'cyclicRepeatAMIPolyPatch.H' for source file 'parcels/derived/basicKinematicMPPICParcel/makeBasicKinematicMPPICParcelSubmodels.C': No such file or directory
+Making dependency list for source file defineBasicKinematicMPPICParcel.C
+wmkdepend: could not open 'cyclicRepeatAMIPolyPatch.H' for source file 'parcels/derived/basicKinematicMPPICParcel/defineBasicKinematicMPPICParcel.C': No such file or directory
+Making dependency list for source file makeBasicReactingMultiphaseParcelSubmodels.C
+wmkdepend: could not open 'cyclicRepeatAMIPolyPatch.H' for source file 'parcels/derived/basicReactingMultiphaseParcel/makeBasicReactingMultiphaseParcelSubmodels.C': No such file or directory
+Making dependency list for source file defineBasicReactingMultiphaseParcel.C
+wmkdepend: could not open 'cyclicRepeatAMIPolyPatch.H' for source file 'parcels/derived/basicReactingMultiphaseParcel/defineBasicReactingMultiphaseParcel.C': No such file or directory
+Making dependency list for source file makeBasicReactingParcelSubmodels.C
+wmkdepend: could not open 'cyclicRepeatAMIPolyPatch.H' for source file 'parcels/derived/basicReactingParcel/makeBasicReactingParcelSubmodels.C': No such file or directory
+Making dependency list for source file defineBasicReactingParcel.C
+wmkdepend: could not open 'cyclicRepeatAMIPolyPatch.H' for source file 'parcels/derived/basicReactingParcel/defineBasicReactingParcel.C': No such file or directory
+Making dependency list for source file makeBasicThermoParcelSubmodels.C
+wmkdepend: could not open 'cyclicRepeatAMIPolyPatch.H' for source file 'parcels/derived/basicThermoParcel/makeBasicThermoParcelSubmodels.C': No such file or directory
+Making dependency list for source file defineBasicThermoParcel.C
+wmkdepend: could not open 'cyclicRepeatAMIPolyPatch.H' for source file 'parcels/derived/basicThermoParcel/defineBasicThermoParcel.C': No such file or directory
+Making dependency list for source file makeBasicKinematicCollidingParcelSubmodels.C
+wmkdepend: could not open 'cyclicRepeatAMIPolyPatch.H' for source file 'parcels/derived/basicKinematicCollidingParcel/makeBasicKinematicCollidingParcelSubmodels.C': No such file or directory
+Making dependency list for source file defineBasicKinematicCollidingParcel.C
+wmkdepend: could not open 'cyclicRepeatAMIPolyPatch.H' for source file 'parcels/derived/basicKinematicCollidingParcel/defineBasicKinematicCollidingParcel.C': No such file or directory
+Making dependency list for source file makeBasicKinematicParcelSubmodels.C
+wmkdepend: could not open 'cyclicRepeatAMIPolyPatch.H' for source file 'parcels/derived/basicKinematicParcel/makeBasicKinematicParcelSubmodels.C': No such file or directory
+Making dependency list for source file defineBasicKinematicParcel.C
+wmkdepend: could not open 'cyclicRepeatAMIPolyPatch.H' for source file 'parcels/derived/basicKinematicParcel/defineBasicKinematicParcel.C': No such file or directory
+Making dependency list for source file reactingMultiphaseCloud.C
+Making dependency list for source file reactingCloud.C
+Making dependency list for source file thermoCloud.C
+Making dependency list for source file kinematicCloud.C
+g++ -std=c++11 -m64 -pthread -DOPENFOAM=2006 -DWM_DP -DWM_LABEL_SIZE=32 -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -Wno-unused-parameter -Wno-invalid-offsetof -Wno-attributes -Wno-unknown-pragmas  -O3  -DNoRepository -ftemplate-depth-100 -I../basic/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/lagrangian/distributionModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/transportModels/compressible/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/specie/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/basic/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/thermophysicalProperties/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/reactionThermo/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/SLGThermo/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/radiationModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/transportModels -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/regionModels/regionModel/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/regionModels/surfaceFilmModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/dynamicFvMesh/lnInclude -I../sampling/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/finiteVolume/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/meshTools/lnInclude -iquote. -IlnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/OpenFOAM/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/OSspecific/POSIX/lnInclude   -fPIC -c clouds/baseClasses/kinematicCloud/kinematicCloud.C -o Make/linux64GccDPInt32Opt/clouds/baseClasses/kinematicCloud/kinematicCloud.o
+g++ -std=c++11 -m64 -pthread -DOPENFOAM=2006 -DWM_DP -DWM_LABEL_SIZE=32 -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -Wno-unused-parameter -Wno-invalid-offsetof -Wno-attributes -Wno-unknown-pragmas  -O3  -DNoRepository -ftemplate-depth-100 -I../basic/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/lagrangian/distributionModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/transportModels/compressible/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/specie/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/basic/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/thermophysicalProperties/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/reactionThermo/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/SLGThermo/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/radiationModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/transportModels -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/regionModels/regionModel/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/regionModels/surfaceFilmModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/dynamicFvMesh/lnInclude -I../sampling/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/finiteVolume/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/meshTools/lnInclude -iquote. -IlnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/OpenFOAM/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/OSspecific/POSIX/lnInclude   -fPIC -c clouds/baseClasses/thermoCloud/thermoCloud.C -o Make/linux64GccDPInt32Opt/clouds/baseClasses/thermoCloud/thermoCloud.o
+g++ -std=c++11 -m64 -pthread -DOPENFOAM=2006 -DWM_DP -DWM_LABEL_SIZE=32 -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -Wno-unused-parameter -Wno-invalid-offsetof -Wno-attributes -Wno-unknown-pragmas  -O3  -DNoRepository -ftemplate-depth-100 -I../basic/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/lagrangian/distributionModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/transportModels/compressible/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/specie/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/basic/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/thermophysicalProperties/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/reactionThermo/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/SLGThermo/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/radiationModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/transportModels -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/regionModels/regionModel/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/regionModels/surfaceFilmModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/dynamicFvMesh/lnInclude -I../sampling/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/finiteVolume/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/meshTools/lnInclude -iquote. -IlnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/OpenFOAM/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/OSspecific/POSIX/lnInclude   -fPIC -c clouds/baseClasses/reactingCloud/reactingCloud.C -o Make/linux64GccDPInt32Opt/clouds/baseClasses/reactingCloud/reactingCloud.o
+g++ -std=c++11 -m64 -pthread -DOPENFOAM=2006 -DWM_DP -DWM_LABEL_SIZE=32 -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -Wno-unused-parameter -Wno-invalid-offsetof -Wno-attributes -Wno-unknown-pragmas  -O3  -DNoRepository -ftemplate-depth-100 -I../basic/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/lagrangian/distributionModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/transportModels/compressible/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/specie/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/basic/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/thermophysicalProperties/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/reactionThermo/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/SLGThermo/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/radiationModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/transportModels -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/regionModels/regionModel/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/regionModels/surfaceFilmModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/dynamicFvMesh/lnInclude -I../sampling/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/finiteVolume/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/meshTools/lnInclude -iquote. -IlnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/OpenFOAM/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/OSspecific/POSIX/lnInclude   -fPIC -c clouds/baseClasses/reactingMultiphaseCloud/reactingMultiphaseCloud.C -o Make/linux64GccDPInt32Opt/clouds/baseClasses/reactingMultiphaseCloud/reactingMultiphaseCloud.o
+g++ -std=c++11 -m64 -pthread -DOPENFOAM=2006 -DWM_DP -DWM_LABEL_SIZE=32 -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -Wno-unused-parameter -Wno-invalid-offsetof -Wno-attributes -Wno-unknown-pragmas  -O3  -DNoRepository -ftemplate-depth-100 -I../basic/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/lagrangian/distributionModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/transportModels/compressible/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/specie/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/basic/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/thermophysicalProperties/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/reactionThermo/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/SLGThermo/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/radiationModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/transportModels -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/regionModels/regionModel/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/regionModels/surfaceFilmModels/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/dynamicFvMesh/lnInclude -I../sampling/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/finiteVolume/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/meshTools/lnInclude -iquote. -IlnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/OpenFOAM/lnInclude -I/home/boyao/OpenFOAM/OpenFOAM-v2006/src/OSspecific/POSIX/lnInclude   -fPIC -c parcels/derived/basicKinematicParcel/defineBasicKinematicParcel.C -o Make/linux64GccDPInt32Opt/parcels/derived/basicKinematicParcel/defineBasicKinematicParcel.o
+In file included from ../basic/lnInclude/particle.H:712,
+                 from parcels/derived/basicKinematicParcel/basicKinematicParcel.H:39,
+                 from parcels/derived/basicKinematicParcel/defineBasicKinematicParcel.C:26:
+../basic/lnInclude/particleTemplates.C:31:10: fatal error: cyclicRepeatAMIPolyPatch.H: No such file or directory
+   31 | #include "cyclicRepeatAMIPolyPatch.H"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [/home/boyao/OpenFOAM/OpenFOAM-v2006/wmake/rules/General/transform:35: Make/linux64GccDPInt32Opt/parcels/derived/basicKinematicParcel/defineBasicKinematicParcel.o] Error 1

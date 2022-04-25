@@ -1,0 +1,366 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      coalCloud1Properties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solution
+{
+    active          true;
+    transient       yes;
+    coupled         yes;
+    cellValueSourceCorrection on;
+
+    sourceTerms
+    {
+        schemes
+        {
+            rho             semiImplicit 1;
+            U               semiImplicit 1;
+            Yi              semiImplicit 1;
+            h               semiImplicit 1;
+// 	    h               explicit 1;
+            radiation       semiImplicit 1;
+        }
+    }
+
+    interpolationSchemes
+    {
+        rho             cell;
+        U               cellPoint;
+        thermo:mu       cell;
+        T               cell;
+        Cp              cell;
+        kappa           cell;
+        p               cell;
+        G               cell;
+    }
+
+    integrationSchemes
+    {
+        U               Euler;
+        T               analytical;
+    }
+}
+
+constantProperties
+{
+    rho0            884;
+    T0              300;
+    Cp0             1500;
+    epsilon0        0.8;
+    f0              0.5;
+
+    TDevol          300;
+    LDevol          0;
+    hRetentionCoeff 1;
+
+    constantVolume  true;
+
+}
+
+subModels
+{
+    particleForces
+    {
+        //sphereDrag;
+        gravity;
+    }
+
+    injectionModels
+    {
+        model1
+        {
+            type            manualInjection;
+            massTotal       0;
+            parcelBasisType fixed;
+            nParticle       1;
+            SOI             0;
+            positionsFile   "coalCloud1Positions";
+            U0              (0 0 0);
+
+//             sizeDistribution
+//             {
+//                 type        normal;
+//
+//                 normalDistribution
+//                 {
+//                      expectation    6.9e-04; //add
+//                      variance       3.0e-05;
+//                      minValue       6.0e-04;
+//                      maxValue       7.8e-04;
+//                 }
+//             }
+            sizeDistribution
+            {
+                type        fixedValue;
+                fixedValueDistribution
+                {
+                    value   0.0003;
+                }
+            }
+            flowRateProfile constant 1;
+        }
+    }
+
+    dispersionModel none; // add
+
+    patchInteractionModel localInteraction;
+
+    stochasticCollisionModel none;
+
+    heatTransferModel RanzMarshall;
+
+    compositionModel singleMixtureFraction;
+
+    phaseChangeModel liquidEvaporation;
+
+    devolatilisationModel CRECK2017DevolatilisationV3; //add
+
+    surfaceReactionModel none; //add
+
+    surfaceFilmModel none;
+
+    radiation       on;
+
+    localInteractionCoeffs
+    {
+       patches
+       (
+          WALL
+          {
+            type     rebound;
+          }
+          OUTLET
+          {
+	    type escape;
+	  }
+	            INLET
+          {
+	    type escape;
+	  }
+       );
+    }
+
+    RanzMarshallCoeffs
+    {
+        BirdCorrection  false;
+    }
+
+    singleMixtureFractionCoeffs
+    {
+        phases
+        (
+            gas // number doesn't mean any thing
+            {
+                H2              0.00;
+                H2O             0.00;
+                CO             0.00;
+                CO2             0.00;
+                CH2O             0.00;
+                HCOOH             0.00;
+                CH4             0.00;
+                CH2OHCHO          0.00;
+                CH3OH             0.00;
+                CH3CO2H           0.00;
+                CHOCHO             0.00;
+                C2H4             0.0;
+                C2H6             0.0;
+                CH3CHO             0.0;
+                C2H5OH             0.0;
+                C2H3CHO             0.0;
+                C2H5CHO             0.0;
+                CH2OHCH2CHO         0.0;
+                FURFURAL          0.0;
+                C5H8O4             0.0;
+                C6H5OH             0.0;
+                C6H6O3             0.0;
+                C6H10O5             0.0;
+                C6H5OCH3             0.0;
+                //C9H10O2             0.0;
+                //C11H12O4             0.0;
+                C24H28O4             0.0;
+                U2ME12             0.0;
+                MLINO             0.0;
+                VANILLIN          0.0;
+                CRESOL            1.0;
+                //LINOACID             1.00;
+            }
+            liquid
+            {
+                H2O             1.0;
+            }
+            solid
+            {
+                CELL            0.43165;
+                CELLA           0.0;
+                HCE1            0.0;
+                HCE2            0.0;
+                GMSW            0.0;
+                XYHW            0.19691;
+                XYGR            0.0;
+                LIG-C            0.06111;
+                LIG-H            0.07469;
+                LIG-O            0.13871;
+                LIG-CC           0.0;
+                LIG-OH           0.0;
+                LIG             0.0;
+                TGL             0.03589;
+                TANN           0.03104;
+                ITANN           0.0;
+                GCO2            0.0;
+                GCO             0.0;
+                GCOH2           0.0;
+                GCOH2L          0.0;
+                GCOH2S          0.0;
+                GC6H5OH         0.0;
+                GH2             0.0;
+                GCH4            0.0;
+                GCH3OH          0.0;
+                GC2H4           0.0;
+                GC2H6           0.0;
+                C               0.0;
+                ash             0.03;
+            }
+        );
+        YGasTot0        0.0;
+        YLiquidTot0     0.0;
+        YSolidTot0      1.0;
+    }
+
+    liquidEvaporationCoeffs
+    {
+        enthalpyTransfer enthalpyDifference;
+
+        activeLiquids
+        (
+            H2O
+        );
+    }
+    CRECK2017DevolatilisationV3Coeffs
+    {
+        volatileData
+        (
+            (H2)
+            (H2O)
+            (CO)
+            (CO2)
+            (CH2O)
+            (HCOOH)
+            (CH4)
+            (CH3OH)
+            (CH3CO2H)
+            (CH2OHCHO)
+            (CHOCHO)
+            (C2H4)
+            (C2H6)
+            (CH3CHO)
+            (C2H5OH)
+            (C2H3CHO)
+            (C2H5CHO)
+            (CH2OHCH2CHO)
+            (FURFURAL)
+            (C5H8O4)
+            (C6H5OH)
+            (C6H6O3)
+            (C6H10O5)
+            (C6H5OCH3)
+            //(C9H10O2)
+            //(C11H12O4)
+            (C24H28O4)
+            (U2ME12)// U2ME12 //C13H22O2
+            (VANILLIN)
+            (CRESOL)
+            (MLINO)// MLINO //C19H34O2
+            //(LINOACID)
+        );
+
+        solidMolarMass
+        (
+                (CELL            162.0)
+                (CELLA           162.0)
+                //(HCE             132.0)
+                (HCE1            132.0)
+                (HCE2            132.0)
+                (GMSW            132.0)
+                (XYHW            132.0)
+                (XYGR            132.0)
+                (LIG-C            258.0)
+                (LIG-H            436.0)
+                (LIG-O            422.0)
+                (LIG-CC           258.0)
+                (LIG-OH           378.0)
+                (LIG             208.0)
+                (TGL           896.0)//C57H100O7
+                (TANN           304.0)//C15H12O7
+                (ITANN           210.0)//C9H6O6
+                (GCO2            44.0)
+                (GCO             28.0)
+                (GCOH2           30.0)
+                (GCOH2L          30.0)
+                (GCOH2S          30.0)
+                (GH2             2.0)
+                (GCH4              16.0)
+                (GCH3OH             32.0)
+                (GC2H4             28.0)
+                (GC2H6             30.0)
+                (GC6H5OH           94.0)
+                (C               12.0)
+                (ash             60.0)
+        );
+
+        gasMolarMass
+        (
+                (H2	2.0)
+                (H2O	18.0)
+              	(CO	28.0)
+              	(CO2	44.0)
+              	(CH2O	30.0)
+              	(HCOOH	46.0)
+              	(CH4	16.0)
+              	(CH3OH	32.0)
+                (CH3CO2H 60.0)
+                (CH2OHCHO 60)
+              	(CHOCHO	58.0)
+              	(C2H4	28.0)
+              	(C2H6 30.0)
+              	(CH3CHO	44.0)
+              	(C2H5OH	46.0)
+              	(C2H3CHO	56.0)
+              	(C2H5CHO	58.0)
+                (CH2OHCH2CHO 74.0)
+                (FURFURAL 96.0)
+              	(C5H8O4	132.0)
+              	(C6H5OH	94.0)
+              	(C6H6O3	126.0)
+              	(C6H10O5	162.0)
+              	(C6H5OCH3	108.0)
+                (C24H28O4 380.0)
+                (U2ME12 210.0)//(U2ME12  210)
+                (MLINO 294.0)//(MLINO 294)
+                (CRESOL 108.0)
+                (VANILLIN 152.0)
+        );
+
+        residualCoeff   0.001;
+    };
+
+}
+
+
+cloudFunctions
+{}
+
+
+// ************************************************************************* //

@@ -1,0 +1,3 @@
+surfWriters = sampledSurface/writers
+meshToMeshMethods = meshToMesh/calcMethod
+LIB = $(FOAM_USER_LIBBIN)/libboyaosampling
