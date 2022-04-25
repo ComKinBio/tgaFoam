@@ -136,16 +136,20 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::readTGASetup
 )
 {
 
-  IOdictionary TGAdict
+//   IOdictionary TGAdict
+//   (
+//     IOobject
+//     (
+//       "TGASetup",
+//       mesh.time().constant(),
+//       mesh,
+//       IOobject::MUST_READ_IF_MODIFIED,
+//       IOobject::NO_WRITE
+//     )
+//   );
+  const dictionary& TGAdict
   (
-    IOobject
-    (
-      "TGASetup",
-      mesh.time().constant(),
-      mesh,
-      IOobject::MUST_READ_IF_MODIFIED,
-      IOobject::NO_WRITE
-    )
+      IFstream("constant/TGASetup")()
   );
 
   TGAdict.lookup("TPerMin")>>this->TPerMin_;
