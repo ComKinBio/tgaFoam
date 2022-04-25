@@ -228,16 +228,21 @@ void Foam::CRECKDevolatilisationV5<CloudType>::readReactionDict
 )
 {
 
-  IOdictionary reactionDict_
+  // IOdictionary reactionDict_
+  // (
+  //   IOobject
+  //   (
+  //     "reactionProperties",
+  //     mesh.time().constant(),
+  //     mesh,
+  //     IOobject::MUST_READ_IF_MODIFIED,
+  //     IOobject::NO_WRITE
+  //   )
+  // );
+
+  const dictionary& reactionDict_
   (
-    IOobject
-    (
-      "reactionProperties",
-      mesh.time().constant(),
-      mesh,
-      IOobject::MUST_READ_IF_MODIFIED,
-      IOobject::NO_WRITE
-    )
+      IFstream("constant/reactionProperties")()
   );
 
   // number of reaction steps
