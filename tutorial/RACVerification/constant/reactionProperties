@@ -1,0 +1,1135 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+  version     2.0;
+  format      ascii;
+  class       dictionary;
+  location    "constant";
+  object      reactionProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// cellulose
+//CELL=>CELLA
+reaction0
+{
+  reactants CELL;
+
+  primary
+  {
+    solidProducts
+    (
+      (CELLA 1)
+    );
+
+    gasProducts
+    (
+      (Null 0)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (Null 0)
+    );
+  }
+
+  xCoeff 0;
+  Ea  188.37;
+  A 4.00000E+013;
+  b 0;
+
+};
+
+// CELLA -> (1 - xCELL) * (0.45 HAA + 0.2 GLYOX + 0.3 C3H6O + 0.25 HMFU
+  // + 0.05 H2 + 0.31 CO + 0.41 CO2 + 0.4 CH2O + 0.15 CH3OH + 0.1 CH3CHO
+  // + 0.83 H2O + 0.02 HCOOH
+  // + 0.05 G{H2} + 0.2 G{CH4} + 0.61 Char)
+  // + xCELL * (5.5 Char + 4 H2O + 0.5 CO2 +H2)
+  reaction1
+  {
+    reactants CELLA;
+
+    primary
+    {
+      solidProducts
+      (
+        (GH2 0.05)
+        (GCH4 0.2)
+        (C 0.61)
+      );
+
+      gasProducts
+      (
+        (C2H4O2 0.45)
+        (C2H2O2 0.2)
+        (C2H5CHO 0.3)
+        (C6H6O3 0.25)
+        (H2 0.05)
+        (CO 0.31)
+        (CO2 0.41)
+        (CH2O 0.4)
+        (CH3OH 0.15)
+        (CH3CHO 0.1)
+        (H2O 0.83)
+        (HCOOH 0.02)
+      );
+    }
+
+    secondary
+    {
+      solidProducts
+      (
+        (C 5.5)
+      );
+
+      gasProducts
+      (
+        (H2O 4)
+        (CO2 0.5)
+        (H2 1)
+      );
+    }
+
+    xCoeff 0.1;
+    Ea  80.00;
+    A 2.0000E+006;
+    b 0;
+
+  };
+
+  // CELLA -> (1 - xCELL) * (LVG/same products as R2) + xCELL * (5.5 Char +
+  // 4 H2O + 0.5 CO2 +H2)
+  reaction2
+  {
+    reactants CELLA;
+
+    primary
+    {
+      // solidProducts
+      // (
+      //   (Null 0)
+      // );
+      //
+      // gasProducts
+      // (
+      //   (C6H10O5 1)
+      // );
+      solidProducts
+      (
+        (GH2 0.05)
+        (GCH4 0.2)
+        (C 0.61)
+      );
+
+      gasProducts
+      (
+        (C2H4O2 0.45)
+        (C2H2O2 0.2)
+        (C2H5CHO 0.3)
+        (C6H6O3 0.25)
+        (H2 0.05)
+        (CO 0.31)
+        (CO2 0.41)
+        (CH2O 0.4)
+        (CH3OH 0.15)
+        (CH3CHO 0.1)
+        (H2O 0.83)
+        (HCOOH 0.02)
+      );
+    }
+
+    secondary
+    {
+      solidProducts
+      (
+        (C 5.5)
+      );
+
+      gasProducts
+      (
+        (H2O 4)
+        (CO2 0.5)
+        (H2 1)
+      );
+    }
+
+    xCoeff 0.1;
+    Ea  41.86;
+    A 4.0000E+000;
+    b 1;
+
+  };
+
+  // HCE -> 0.4 AA (HW)/0.1 AA (SW) + 0.58 HCEA1 + 0.42 HCEA2
+
+  reaction3
+  {
+    reactants HCE;
+
+    primary
+    {
+      solidProducts
+      (
+        (HCE1 0.58)
+        (HCE2 0.42)
+      );
+
+      gasProducts
+      (
+        (C2H4O2 1) //HW 0.4, SW 0.1
+      );
+    }
+
+    secondary
+    {
+      solidProducts
+      (
+        (Null 0)
+      );
+
+      gasProducts
+      (
+        (Null 0)
+      );
+    }
+
+    xCoeff 0;
+    Ea  129.77;
+    A 1.0000E+010;
+    b 0;
+
+  };
+
+// HCEA1 -> (1 - xHCE) * (0.5 CO + 0.5 CO2 + 0.325 CH4 + 0.8 CH2O +
+// 0.1 CH3OH + 0.25 C2H4 + 0.125 ETOH + 0.025 H2O + 0.025 HCOOH +
+// 0.275 G {CO2} + 0.4 G{COH2} + 0.125 G{H2} + 0.45 G{CH3OH} + 0.875 Char)
+// +xHCE * (4.5 Char + 3 H2O + 0.5 CO2 +H2)
+
+reaction4
+{
+  reactants HCE1;
+
+  primary
+  {
+    solidProducts
+    (
+      (GCO2 0.275)
+      (GCOH2 0.4)
+      (GH2 0.125)
+      (GCH3OH 0.45)
+      (C 0.875)
+    );
+
+    gasProducts
+    (
+      (CO 0.5)
+      (CO2 0.5)
+      (CH4 0.325)
+      (CH2O 0.8)
+      (CH3OH 0.1)
+      (C2H4 0.25)
+      (C2H5OH 0.125)
+      (H2O 0.025)
+      (HCOOH 0.025)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (C 4.5)
+    );
+
+    gasProducts
+    (
+      (H2O 3)
+      (CO2 0.5)
+      (H2 1)
+    );
+  }
+
+  xCoeff 0.2;
+  Ea  125.58;
+  A 1.2000E+009;
+  b 0;
+
+};
+
+// HCEA1 -> (1 - xHCE) * (0.1 CO + 0.8 CO2 + 0.3 CH2O + 0.25 H2O + 0.05 HCOOH
+// + 0.15 G{CO2} + 0.15 G{CO} + 1.2 G{COH2} + 0.2 G{H2}
+// + 0.625 G {CH4} + 0.375 G{C2H4} + 0.875 Char)
+// + xHCE * (4.5 Char + 3 H2O + 0.5 CO2 +H2)
+
+reaction5
+{
+  reactants HCE1;
+
+  primary
+  {
+    solidProducts
+    (
+      (GCO2 0.15)
+      (GCO 0.15)
+      (GCOH2 1.2)
+      (GH2 0.2)
+      (GCH4 0.625)
+      (GC2H4 0.375)
+      (C 0.875)
+    );
+
+    gasProducts
+    (
+      (CO 0.1)
+      (CO2 0.8)
+      (CH2O 0.3)
+      (H2O 0.25)
+      (HCOOH 0.05)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (C 4.5)
+    );
+
+    gasProducts
+    (
+      (H2O 3)
+      (CO2 0.5)
+      (H2 1)
+    );
+  }
+
+  xCoeff 0.2;
+  Ea  33.5;
+  A 1.5000E-001;
+  b 1;
+
+};
+
+// HCEA1 -> (1 - xHCE) * (XYL/same as R6 (reaction 4))
+// + xHCE * (4.5 Char + 3 H2O + 0.5 CO2 +H2)
+
+reaction6
+{
+  reactants HCE1;
+
+  primary
+  {
+    solidProducts
+    (
+      (GCO2 0.275)
+      (GCOH2 0.4)
+      (GH2 0.125)
+      (GCH3OH 0.45)
+      (C 0.875)
+    );
+
+    gasProducts
+    (
+      (CO 0.5)
+      (CO2 0.5)
+      (CH4 0.325)
+      (CH2O 0.8)
+      (CH3OH 0.1)
+      (C2H4 0.25)
+      (C2H5OH 0.125)
+      (H2O 0.025)
+      (HCOOH 0.025)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (C 4.5)
+    );
+
+    gasProducts
+    (
+      (H2O 3)
+      (CO2 0.5)
+      (H2 1)
+    );
+  }
+
+  xCoeff 0.2;
+  Ea  46.05;
+  A 3.0000E+000;
+  b 1;
+
+};
+
+// HCEA2 -> (1 - xHCE) * (0.2 HAA + 0.175 CO + 0.275 CO2 + 0.5 CH2O
+//   + 0.1 ETOH + 0.2 H2O + 0.025 HCOOH
+//   + 0.4 G{CO2} + 0.925 G{COH2} + 0.25 G {CH4}
+//   + 0.3 G{CH3OH} + 0.275 G{C2H4} + Char)
+//   + xHCE * (4.5 Char + 3 H2O + 0.5 CO2 +H2)
+reaction7
+{
+  reactants HCE2;
+
+  primary
+  {
+    solidProducts
+    (
+      (GCO2 0.4)
+      (GCOH2 0.925)
+      (GCH4 0.25)
+      (GCH3OH 0.3)
+      (GC2H4 0.275)
+      (C 1)
+    );
+
+    gasProducts
+    (
+      (C2H4O2 0.2)
+      (CO 0.175)
+      (CO2 0.275)
+      (CH2O 0.5)
+      (C2H5OH 0.1)
+      (H2O 0.2)
+      (HCOOH 0.025)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (C 4.5)
+    );
+
+    gasProducts
+    (
+      (H2O 3)
+      (CO2 0.5)
+      (H2 1)
+    );
+  }
+
+  xCoeff 0.2;
+  Ea  138.14;
+  A 5.0000E+009;
+  b 0;
+
+};
+
+// LIG-C ->  0.1 pCOUMARYL (C9H10O2) + 0.08 PHENOL(C6H5OH)
+// + 0.32 CO + 0.3  CH2O + H2O
+// + 0.35 LIG-CC + 0.7 G{COH2} + 0.495 G{CH4} + 0.41 G{C2H4} + 5.735 Char
+
+reaction8
+{
+  reactants LIG-C;
+
+  primary
+  {
+    solidProducts
+    (
+      (LIG-CC 0.35)
+      (GCOH2 0.7)
+      (GCH4 0.495)
+      (GC2H4 0.41)
+      (C 5.735)
+    );
+
+    gasProducts
+    (
+      (C9H10O2 0.1)
+      (C6H5OH 0.08)
+      (C2H4O2 0.2)
+      (CO 0.32)
+      (CH2O 0.3)
+      (H2O 1)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (Null 0)
+    );
+  }
+
+  xCoeff 0;
+  Ea  203.02;
+  A 1.3300E+015;
+  b 0;
+
+};
+
+// LIG-H ->  0.25 HAA + 0.5 C3H6O (C2H5CHO) + LIG-OH + 0.5 G{C2H4}
+
+reaction9
+{
+  reactants LIG-H;
+
+  primary
+  {
+    solidProducts
+    (
+      (LIG-OH 1)
+      (GC2H4 0.5)
+    );
+
+    gasProducts
+    (
+      (C2H4O2 0.25)
+      (C2H5CHO 0.5)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (Null 0)
+    );
+  }
+
+  xCoeff 0;
+  Ea  156.97;
+  A 6.7000E+013;
+  b 0;
+
+};
+
+// LIG-O -> LIG-OH + CO2
+
+reaction10
+{
+  reactants LIG-O;
+
+  primary
+  {
+    solidProducts
+    (
+      (LIG-OH 1)
+    );
+
+    gasProducts
+    (
+      (CO2 1)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (Null 0)
+    );
+  }
+
+  xCoeff 0;
+  Ea  106.74;
+  A 3.3000E+008;
+  b 0;
+
+};
+
+// LIG-CC -> (1 - xLIG) * (0.35 HAA(C2H4O2) + 0.3 pCOUMARYL(C9H10O2)
+// + 0.2 PHENOL(C6H5OH) + 0.4 CO + 0.65 CH4 + 0.6 C2H4 + 0.7 H2O
+//   + 0.4 G{CO} + G{COH2} + 6.75 Char) +xLIG * (15 Char + 4 H2O+ 3 H2)
+
+reaction11
+{
+  reactants LIG-CC;
+
+  primary
+  {
+    solidProducts
+    (
+      (GCO 0.4)
+      (GCOH2 1)
+      (C 6.75)
+    );
+
+    gasProducts
+    (
+      (C2H4O2 0.35)
+      (C9H10O2 0.3)
+      (C6H5OH 0.2)
+      (CO 0.4)
+      (CH4 0.65)
+      (C2H4 0.6)
+      (H2O 0.7)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (C 15)
+    );
+
+    gasProducts
+    (
+      (H2O 4)
+      (H2 3)
+    );
+  }
+
+  xCoeff 0.3;
+  Ea  131.86;
+  A 3.0000E+007;
+  b 0;
+
+};
+
+//LIG-OH ->  0.55 CO + 0.05 CO2 + 0.1 CH4
+//+ 0.6 CH3OH + 0.9 H2O + 0.05 HCOOH
+//+ LIG + 0.6 G{CO} + 0.85 G{COH2} + 0.1 G{H2} + 0.35 {CH4}
+//+ 0.3 G{CH3OH} + 0.2 G{C2H4} + 4.15 Char
+
+reaction12
+{
+  reactants LIG-OH;
+
+  primary
+  {
+    solidProducts
+    (
+      (LIG 1)
+      (GCO 0.6)
+      (GCOH2 0.85)
+      (GH2 0.1)
+      (GCH4 0.35)
+      (GCH3OH 0.3)
+      (GC2H4 0.2)
+      (C 4.15)
+    );
+
+    gasProducts
+    (
+      (CO 0.55)
+      (CO2 0.05)
+      (CH4 0.1)
+      (CH3OH 0.6)
+      (H2O 0.9)
+      (HCOOH 0.05)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (Null 0)
+    );
+  }
+
+  xCoeff 0;
+  Ea  125.58;
+  A 1.0000E+008;
+  b 0;
+
+};
+
+// LIG -> (1 - xLIG) * FE2MACR (C11H12O4)
+// + xLIG * (10.5 Char + 3 H2O + 0.5 CO2 +3 H2)
+reaction13
+{
+  reactants LIG;
+
+  primary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (C11H12O4 1)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (C 10.5)
+    );
+
+    gasProducts
+    (
+      (H2O 3)
+      (CO2 0.5)
+      (H2 3)
+    );
+  }
+
+  xCoeff 0.3;
+  Ea  50.2;
+  A 4.0000E+000;
+  b 1;
+
+};
+
+// LIG -> (1 - xLIG) * (0.2 C3H6O(C2H5CHO) + CO + 0.2 CH4
+// + 0.2 CH2O + 0.4 CH3OH + 0.2 CH3CHO + 0.95 H2O + 0.05 HCOOH
+// + 0.45 G{CO} + 0.5 G{COH2} + 0.4 G{CH4} + 0.65 G{C2H4} + 5.5 Char)
+// + xLIG * (10.5 Char + 3 H2O + 0.5 CO2 +3 H2)
+
+reaction14
+{
+  reactants LIG;
+
+  primary
+  {
+    solidProducts
+    (
+      (GCO 0.45)
+      (GCOH2 0.5)
+      (GCH4 0.4)
+      (GC2H4 0.65)
+      (C 5.5)
+    );
+
+    gasProducts
+    (
+      (C2H5CHO 0.2)
+      (CO 1)
+      (CH4 0.2)
+      (CH2O 0.2)
+      (CH3OH 0.4)
+      (CH3CHO 0.3)
+      (H2O 0.95)
+      (HCOOH 0.05)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (C 10.5)
+    );
+
+    gasProducts
+    (
+      (H2O 3)
+      (CO2 0.5)
+      (H2 3)
+    );
+  }
+
+  xCoeff 0.3;
+  Ea  125.58;
+  A 4.0000E+008;
+  b 0;
+
+};
+
+// LIG -> (1 - xLIG) * (0.4 CO + 0.2 CH4 + 0.4 CH2O + 0.6 H2O
+// + 0.2 G{CO}+ 2 G{COH2} + 0.4 {CH4} + 0.4 G{CH3OH} + 0.5 G{C2H4} + 6 Char)
+// + xLIG * (10.5 Char + 3 H2O + 0.5 CO2 +3 H2)
+
+reaction15
+{
+  reactants LIG;
+
+  primary
+  {
+    solidProducts
+    (
+      (GCO 0.2)
+      (GCOH2 2)
+      (GCH4 0.4)
+      (GCH3OH 0.4)
+      (GC2H4 0.5)
+      (C 6)
+    );
+
+    gasProducts
+    (
+      (CO 0.4)
+      (CH4 0.2)
+      (CH2O 0.4)
+      (H2O 0.6)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (C 10.5)
+    );
+
+    gasProducts
+    (
+      (H2O 3)
+      (CO2 0.5)
+      (H2 3)
+    );
+  }
+
+  xCoeff 0.3;
+  Ea  33.5;
+  A 8.3000E-002;
+  b 1;
+
+};
+
+// G{CO2} -> CO2
+
+reaction16
+{
+  reactants GCO2;
+
+  primary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (CO2 1)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (Null 0)
+    );
+  }
+
+  xCoeff 0;
+  Ea  100.46;
+  A 1.0000E+005;
+  b 0;
+
+};
+
+
+// G{CO} -> (1 - xG{})*CO +xG{} * (0.5 Char + 0.5 CO2)
+
+reaction17
+{
+  reactants GCO;
+
+  primary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (CO 1)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (C 0.5)
+    );
+
+    gasProducts
+    (
+      (CO2 0.5)
+    );
+  }
+
+  xCoeff 0.4;
+  Ea  209.3;
+  A 3.0000E+013;
+  b 0;
+
+};
+
+// G{COH2} -> 0.75 G2{COH2} + 0.25 (H2 + 0.5 CO + 0.25 CO2 + 0.25 Char)
+
+reaction18
+{
+  reactants GCOH2;
+
+  primary
+  {
+    solidProducts
+    (
+      (G2COH2 0.75)
+      (C 0.0625)
+    );
+
+    gasProducts
+    (
+      (H2 0.25)
+      (CO 0.125)
+      (CO2 0.0625)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (Null 0)
+    );
+  }
+
+  xCoeff 0;
+  Ea  100.46;
+  A 1.0000E+006;
+  b 0;
+
+};
+
+// G{H2} -> H2
+
+reaction19
+{
+  reactants GH2;
+
+  primary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (H2 1)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (Null 0)
+    );
+  }
+
+  xCoeff 0;
+  Ea  313.96;
+  A 1.0000E+012;
+  b 0;
+
+};
+
+// G{CH4} -> CH4
+
+reaction20
+{
+  reactants GCH4;
+
+  primary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (CH4 1)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (Null 0)
+    );
+  }
+
+  xCoeff 0;
+  Ea  300.00;
+  A 2.0000E+013;
+  b 0;
+
+};
+
+// G{CH3OH} -> (1 - xG{})*CH3OH + xG{} * (Char + H2O+ H2)
+
+reaction21
+{
+  reactants GCH3OH;
+
+  primary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (CH3OH 1)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (C 1)
+    );
+
+    gasProducts
+    (
+      (H2O 1)
+      (H2 1)
+    );
+  }
+
+  xCoeff 0.4;
+  Ea  209.30;
+  A 1.2000E+013;
+  b 0;
+
+};
+
+//G{C2H4} -> 0.3 C2H4 + 0.7 (CH4 + Char)
+
+reaction22
+{
+  reactants GC2H4;
+
+  primary
+  {
+    solidProducts
+    (
+      (C 0.7)
+    );
+
+    gasProducts
+    (
+      (C2H4 0.3)
+      (CH4 0.7)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (Null 0)
+    );
+  }
+
+  xCoeff 0;
+  Ea  100.46;
+  A 1.0000E+006;
+  b 0;
+
+};
+
+// G2{COH2} -> 0.2 G3{COH2} + 0.8 (CO + H2)
+reaction23
+{
+  reactants G2COH2;
+
+  primary
+  {
+    solidProducts
+    (
+      (G3COH2 0.2)
+    );
+
+    gasProducts
+    (
+      (CO 0.8)
+      (H2 0.8)
+    );
+  }
+
+  secondary
+  {
+    solidProducts
+    (
+      (Null 0)
+    );
+
+    gasProducts
+    (
+      (Null 0)
+    );
+  }
+
+  xCoeff 0;
+  Ea  209.30;
+  A 1.5000E+009;
+  b 0;
+
+};
+
+  // ************************************************************************* //

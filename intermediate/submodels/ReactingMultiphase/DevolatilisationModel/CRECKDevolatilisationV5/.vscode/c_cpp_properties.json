@@ -1,0 +1,31 @@
+{
+  "configurations": [
+    {
+      "name": "Linux",
+      "includePath": [
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/OSspecific/POSIX/lnInclude",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/OpenFOAM/lnInclude",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/dynamicFvMesh/lnInclude",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/finiteVolume/lnInclude",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/lagrangian/distributionModels/lnInclude",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/meshTools/lnInclude",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/regionModels/regionModel/lnInclude",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/regionModels/surfaceFilmModels/lnInclude",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/SLGThermo/lnInclude",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/basic/lnInclude",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/reactionThermo/lnInclude",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/specie/lnInclude",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/thermophysicalModels/thermophysicalProperties/lnInclude",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/transportModels",
+        "/home/boyao/OpenFOAM/OpenFOAM-v2006/src/transportModels/compressible/lnInclude",
+        "./**"
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "gnu++14",
+      "intelliSenseMode": "gcc-x64"
+    }
+  ],
+  "version": 4
+}
