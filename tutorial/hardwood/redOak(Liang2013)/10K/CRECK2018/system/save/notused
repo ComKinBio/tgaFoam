@@ -1,0 +1,319 @@
+totalmass
+{
+	type volumeIntegrate;
+	fields ( H2 CO CO2 CH4 H2O tar C2H4 C2H6);
+	verbose true;
+	outputControlMode timeStep;
+	outputInterval 1;
+	
+} 
+massflowrate2out
+{
+	type		swakExpression;
+	valueType	patch;
+	patchName	OUTLET;
+	verbose		true;
+	expression	"phi";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+}
+
+massflowrate2in
+{
+	type		swakExpression;
+	valueType	patch;
+	patchName	INLET;
+	verbose		true;
+	expression	"phi";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+}
+
+
+notworking
+    massflowrate2
+    {
+        type            faceSource;
+        outputControl   timeStep;
+        log             true;
+        // Output field values as well
+        valueOutput     false;
+        // Type of source: patch/faceZone/sampledSurface
+        source          sampledSurface;
+        sourceName      aaa;
+        sampledSurfaceDict
+        {
+                type cuttingPlane;
+                planeType           pointAndNormal;
+                pointAndNormalDict
+                {
+                        basePoint       (0 0 1.45);  
+                        normalVector    (0 0 1);
+                }
+                source cells; // sample cells or boundaryFaces
+                interpolate false;
+        }
+
+        // Operation: areaAverage/sum/weightedAverage ...
+        operation       sum;
+
+        fields
+        (
+	  rho
+	  phi
+	  U
+        );
+    }
+    
+
+
+
+massflowtar
+{
+	type		swakExpression;
+	valueType	patch;
+	patchName	OUTLET;
+	verbose		true;
+	expression	"phi*tar";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	
+}
+
+massflowCO
+{
+	type		swakExpression;
+	valueType	patch;
+	patchName	OUTLET;
+	verbose		true;
+	expression	"phi*CO";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+}
+
+massflowH2
+{
+	type		swakExpression;
+	valueType	patch;
+	patchName	OUTLET;
+	verbose		true;
+	expression	"phi*H2";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+}
+
+massflowH2O
+{
+	type		swakExpression;
+	valueType	patch;
+	patchName	OUTLET;
+	verbose		true;
+	expression	"phi*H2O";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+}
+
+massflowCO2
+{
+	type		swakExpression;
+	valueType	patch;
+	patchName	OUTLET;
+	verbose		true;
+	expression	"phi*CO2";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+}
+
+massflowC2H4
+{
+	type		swakExpression;
+	valueType	patch;
+	patchName	OUTLET;
+	verbose		true;
+	expression	"phi*C2H4";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+}
+
+massflowC2h6
+{
+	type		swakExpression;
+	valueType	patch;
+	patchName	OUTLET;
+	verbose		true;
+	expression	"phi*C2H6";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+}
+
+massflowHN2
+{
+	type		swakExpression;
+	valueType	patch;
+	patchName	OUTLET;
+	verbose		true;
+	expression	"phi*N2";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+}
+
+massflowrate1
+{
+	type		patchMassFlow;
+	patches
+	(
+			INLET
+			OUTLET
+	);
+	verbose		true;
+	outputControl   timeStep;
+	outputInterval  1;
+}
+
+// coalPositions
+// {
+// 	type		swakExpression;
+// 	outputControlMode timeStep;
+// 	expression	"pos()";
+// 	accumulations
+// 	(
+// 	  min
+// 	  max
+// 	  average
+// 	  weightedAverage
+// 	);
+// 	verbose		true;
+// 	valueType	cloud;
+// 	cloudName	coalCloud1;
+// }
+
+// coalDiameter
+// {
+// 	&coalPosition;
+// 	expression	"d";
+// }
+
+
+    massflowrate2
+    {
+        type            swakExpression;
+        outputControl   timeStep;
+	outputInterval  1;
+	valueType	surface;
+	surfaceName 	aaa;
+	verbose		true;
+	accumulations (
+            sum
+        );
+
+        surface {
+            type plane;
+            basePoint       (0 0 1.449);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        
+
+        expression "rho*U & Sf()"; 
+    }
+    
+    
+        massflowrate4
+    {
+        type            swakExpression;
+        outputControl   timeStep;
+	outputInterval  1;
+	valueType	surface;
+	surfaceName 	ccc;
+	verbose		true;
+	accumulations (
+            sum
+        );
+
+        surface {
+            type plane;
+            basePoint       (0 0 1.4499);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        
+
+        expression "rho*U & Sf()"; 
+    }
+    
+            massflowrate5
+    {
+        type            swakExpression;
+        outputControl   timeStep;
+	outputInterval  1;
+	valueType	surface;
+	surfaceName 	ddd;
+	verbose		true;
+	accumulations (
+            sum
+        );
+
+        surface {
+            type plane;
+            basePoint       (0 0 1.448);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        
+
+        expression "rho*U & Sf()"; 
+    }
+    
+
+    
+            massflowrate6
+    {
+        type            swakExpression;
+        outputControl   timeStep;
+	outputInterval  1;
+	valueType	surface;
+	surfaceName 	eee;
+	verbose		true;
+	accumulations (
+            sum
+        );
+
+        surface {
+            type plane;
+            basePoint       (0 0 1.444);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        
+
+        expression "rho*U & Sf()"; 
+    }
+    
+//     flowBeforeSet
+//     {
+//         type swakExpression;
+//         valueType surface;
+//         c
+// 	surface
+// 	{
+// 	    type sampledTriSurfaceMesh;
+// 	    surface     int_1.stl;
+//             source      cells;  // sample cells or boundaryFaces
+//             interpolate false;	    
+// 	}	
+// cexpression "rho*U & Sf()";
+//         accumulations (
+//             sum
+//         );
+// 
+//     }

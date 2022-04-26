@@ -1,0 +1,6 @@
+#!/bin/bash
+cd ..
+foamListTimes -rm -case CRECK2017
+foamListTimes -rm -case CRECK2018
+foamListTimes -rm -case RACHC
+foamListTimes -rm -case RACLC
