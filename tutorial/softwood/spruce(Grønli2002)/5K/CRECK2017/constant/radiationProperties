@@ -1,0 +1,75 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      radiationProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+radiation       on;
+
+solverFreq      1;
+
+radiationModel  P1;
+
+noRadiation
+{
+}
+
+P1Coeffs
+{
+    C               C [ 0 0 0 0 0 0 0 ] 0;
+}
+
+absorptionEmissionModel binary;
+
+binaryCoeffs
+{
+    model1
+    {
+        absorptionEmissionModel constant;
+        constantCoeffs
+        {
+            absorptivity    0.5;
+            emissivity      0.5;
+            E               0;
+        }
+    }
+    model2
+    {
+        absorptionEmissionModel cloud;
+        cloudCoeffs
+        {
+            cloudNames
+            (
+                coalCloud1
+                //limestoneCloud1
+            );
+        }
+    }
+}
+
+
+scatterModel    cloud;
+
+cloudCoeffs
+{
+    cloudNames
+    (
+        coalCloud1
+        //limestoneCloud1
+    );
+}
+
+
+
+// ************************************************************************* //

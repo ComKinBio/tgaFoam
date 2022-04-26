@@ -1,0 +1,634 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      sampledSets;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+
+massflowtar_1
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.3;
+	verbose		true;
+	expression "tar*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.45);
+            normalVector    (0 0 1);
+            interpolate false;
+        }       	
+}
+massflowtar_2
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.5;
+	verbose		true;
+	expression "tar*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.65);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowtar_3
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.7;
+	verbose		true;
+	expression "tar*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.85);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowtar_4
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.9;
+	verbose		true;
+	expression "tar*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 1.05);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+
+massflowCO2_1
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.3;
+	verbose		true;
+	expression "CO2*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.45);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowCO2_2
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.5;
+	verbose		true;
+	expression "CO2*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.65);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowCO2_3
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.7;
+	verbose		true;
+	expression "CO2*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.85);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowCO2_4
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.9;
+	verbose		true;
+	expression "CO2*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 1.05);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+
+massflowCO_1
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.3;
+	verbose		true;
+	expression "CO*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.45);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowCO_2
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.5;
+	verbose		true;
+	expression "CO*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.65);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowCO_3
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.7;
+	verbose		true;
+	expression "CO*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.85);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowCO_4
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.9;
+	verbose		true;
+	expression "CO*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 1.05);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+
+massflowH2_1
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.3;
+	verbose		true;
+	expression "H2*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.45);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowH2_2
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.5;
+	verbose		true;
+	expression "H2*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.65);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowH2_3
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.7;
+	verbose		true;
+	expression "H2*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.85);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowH2_4
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.9;
+	verbose		true;
+	expression "H2*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 1.05);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+
+massflowH2O_1
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.3;
+	verbose		true;
+	expression "H2O*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.45);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowH2O_2
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.5;
+	verbose		true;
+	expression "H2O*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.65);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowH2O_3
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.7;
+	verbose		true;
+	expression "H2O*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.85);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowH2O_4
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.9;
+	verbose		true;
+	expression "H2O*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 1.05);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+
+massflowCH4_1
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.3;
+	verbose		true;
+	expression "CH4*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.45);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowCH4_2
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.5;
+	verbose		true;
+	expression "CH4*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.65);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowCH4_3
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.7;
+	verbose		true;
+	expression "CH4*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.85);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowCH4_4
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.9;
+	verbose		true;
+	expression "CH4*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 1.05);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+
+massflowC2H4_1
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.3;
+	verbose		true;
+	expression "C2H4*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.45);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowC2H4_2
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.5;
+	verbose		true;
+	expression "C2H4*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.65);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowC2H4_3
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.7;
+	verbose		true;
+	expression "C2H4*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.85);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowC2H4_4
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.9;
+	verbose		true;
+	expression "C2H4*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 1.05);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+
+massflowC2H6_1
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.3;
+	verbose		true;
+	expression "C2H6*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.45);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowC2H6_2
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.5;
+	verbose		true;
+	expression "C2H6*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.65);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowC2H6_3
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.7;
+	verbose		true;
+	expression "C2H6*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 0.85);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+massflowC2H6_4
+{
+	type		swakExpression;
+	valueType	surface;
+	surfaceName 	dis_0.9;
+	verbose		true;
+	expression "C2H6*rho*U & Sf()";
+	accumulations	(sum);
+	outputControlMode timeStep;
+	outputInterval 1;	
+	surface 
+	{
+            type plane;
+            basePoint       (0 0 1.05);
+            normalVector    (0 0 1);
+            interpolate false;
+        }
+        	
+}
+// ************************************************************************* //

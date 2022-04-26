@@ -1,0 +1,43 @@
+ELEMENTS
+C 
+H 
+CL
+O 
+N 
+AR
+HE
+SI
+END
+SPECIES
+HE             AR             N2             O2             H2             
+H2O            H2O2           CO             CO2            CH2O           
+HCO3H          CH4            CH3OH          CH3OOH         C2H2           
+CH2CO          C2H2O2         C2H4           CH3CHO         C2H4O          
+CH3COOH        C2H4O2         CH3CO3H        C2-OQOOH       DME-OQOOH      
+C2H6           CH3OCH3        C2H5OH         GLIET          C2H5OOH        
+C3H2           AC3H4          PC3H4          C2H3CHO        C3H4O2         
+C3H4O3         C3H6           CH3COCH3       C2H5CHO        C3H6O2         
+C3H8           IC3H7OH        NC3H7OH        C4H2           C4H4           
+C4H4O          C4H6           IC3H5CHO       C4H6O2         NC4H8          
+IC4H8          C4H8O                    IC3H7CHO       DMGLE          
+C5H4O2         CYC5H6         C5H8           C5H8O4         IC5H10         
+MTBE-O         MTBE-OQOOH     MTBE           C6H6           C6H5OH         
+C6H6O3         C6H8O4         C6H10O5        DIPE           TAME           
+ETBE           C8H10O3        C9H10O2        C10H8          C11H12O4       
+O              H              OH             HO2            C              
+CH             HCO            HCO3           CH2S           CH2            
+CH3            CH2OH          CH3O           CH3OO          C2H            
+HCCO           C2H3           CH2CHO         CH3CO          CH3CO3         
+C2H5           C2H4OH         CH3CHOH        CH3OCH2        C2-QOOH        
+C2H5OO         DME-QOOH       DME-OO         C2-OOQOOH      DME-OOQOOH     
+C3H3           CH2CHCH2       CHCHCH3        C2H4CHO        CH3COCH2       
+NC3H7          IC3H7          C3H6OH         C4H3           C4H3O          
+C4H5           C3H4CH3        IC4H7          CH2C3H5        IC4H9T         
+NC4H9S         CYC5H5         RMTBE          NEOC5-QOOH     NC5-QOOH       
+MTBE-QOOH      MTBE-OO        MTBE-OOQOOH    C6H5           C6H5O          
+RDIPE          
+END
+REACTIONS
+O+H2<=>H+OH                              3.870E+04    2.700    6260.00
+END
+
